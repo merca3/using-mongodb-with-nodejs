@@ -73,6 +73,7 @@ async function main() {
 
     // averageFinalistsByChange
     const avgByChange = await circulationRepo.averageFinalistsByChange();
+    console.log("Average Finalists By Change: ");
     console.log(avgByChange);
   } catch (error) {
     console.log(error);
