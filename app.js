@@ -66,6 +66,14 @@ async function main() {
     assert(removed);
     const deletedItem = await circulationRepo.getById(addedItem._id);
     assert.equal(deletedItem, null);
+
+    // averageFinalists
+    const avgFinalists = await circulationRepo.averageFinalists();
+    console.log("Average Finalists: " + avgFinalists);
+
+    // averageFinalistsByChange
+    const avgByChange = await circulationRepo.averageFinalistsByChange();
+    console.log(avgByChange);
   } catch (error) {
     console.log(error);
   } finally {
